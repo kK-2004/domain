@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="createTree.h" />
+    <ClInclude Include="deleteDomain.h" />
     <ClInclude Include="headers.h" />
     <ClInclude Include="insertTree.h" />
     <ClInclude Include="tools.h" />
@@ -135,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="createTree.cpp" />
+    <ClCompile Include="deleteDomain.cpp" />
     <ClCompile Include="findTree.cpp" />
     <ClCompile Include="insertTree.cpp" />
     <ClCompile Include="main.cpp" />

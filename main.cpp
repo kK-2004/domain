@@ -2,7 +2,7 @@
 #include "tools.h"
 #include "insertTree.h"
 #include "findTree.h"
-
+#include "deleteDomain.h"
 
 int main() {
     Node* root = new Node("", 0);  // 创建一个空的根节点
@@ -14,7 +14,8 @@ int main() {
         std::cout << "3. 模糊域名查询并打印子树" << std::endl;
         std::cout << "4. 打印域名树（前序遍历）" << std::endl;
         std::cout << "5. 插入域名到特定层级" << std::endl;
-        std::cout << "6. 退出" << std::endl;
+        std::cout << "6. 删除域名" << std::endl;
+        std::cout << "7. 退出" << std::endl;
         std::cout << "请输入操作选项 (1/2/3/4/5/6): ";
 
         int choice;
@@ -69,12 +70,20 @@ int main() {
             insertNode(root, targetDepth);
         }
         else if (choice == 6) {
+            std::cout << "请输入删除域名: ";
+            char deldomain[500];
+            std::cin >> deldomain;
+            deleteDomain(root, deldomain);
+        }
+        else if (choice == 7) {
             // 退出
             std::cout << "退出程序..." << std::endl;
             break;
         }
+        
         else {
             std::cout << "无效的选项，请重新输入。" << std::endl;
         }
+
     }
 }
