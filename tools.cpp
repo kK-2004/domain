@@ -51,8 +51,8 @@ char* reverseDomainParts(const char* input) {
     return result;
 }
 
-void printSubtreeReversed(Node* node, char* path, int depth)
-{
+
+void printSubtreeReversed(Node* node, char* path, int depth) {
     // 确保节点存在
     if (!node) return;
 
@@ -83,11 +83,10 @@ void printSubtreeReversed(Node* node, char* path, int depth)
 
     // 递归打印兄弟节点，恢复深度
     printSubtreeReversed(node->nextSibling, path, currentDepth);
-
 }
 
-void printNodesAtDepth(Node* node, int targetDepth)
-{
+
+void printNodesAtDepth(Node* node, int targetDepth) {
     if (!node) return;
 
     if (node->depth == targetDepth) {
@@ -98,8 +97,7 @@ void printNodesAtDepth(Node* node, int targetDepth)
     printNodesAtDepth(node->nextSibling, targetDepth);
 }
 
-Node* findNodeAtDepth(Node* node, const char* name, int targetDepth)
-{
+Node* findNodeAtDepth(Node* node, const char* name, int targetDepth) {
     if (!node) return nullptr;
 
     if (node->depth == targetDepth && strcmp(node->name, name) == 0) {
@@ -110,5 +108,5 @@ Node* findNodeAtDepth(Node* node, const char* name, int targetDepth)
     if (result) return result;
 
     return findNodeAtDepth(node->nextSibling, name, targetDepth);
-
 }
+

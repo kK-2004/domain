@@ -137,6 +137,7 @@
     <ClCompile Include="createTree.cpp" />
     <ClCompile Include="findTree.cpp" />
     <ClCompile Include="insertTree.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="tools.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

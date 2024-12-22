@@ -18,6 +18,7 @@ void insertNode(Node* root, int targetDepth)
         char* reversedDomain = reverseDomainParts(newDomain);
         createHelper(parentNode, reversedDomain, parentNode->depth);
         std::cout << "ÓòÃû²åÈë³É¹¦£¡" << std::endl;
+
+        //////È±ÉÙÆ¥Åä´íÎóµÄÅĞ¶Ï
     }
-    //////È±ÉÙÆ¥Åä´íÎóµÄÅĞ¶Ï
 }

@@ -23,14 +23,15 @@ Node* findExactNode(Node* node, const char* domain)
     }
     delete[] part;
     return nullptr;
-
 }
 
-void findVagueNode(Node* root, const char* reversedDomain)
+void findVagueNode(Node* root, const char* domain)
 {
+    char* reversedDomain = reverseDomainParts(domain);
+
     Node* node = findExactNode(root, reversedDomain);
     if (node) {
-        char* path = removeSubdomain(node->name, reversedDomain);
+        char* path = removeSubdomain(node->name, domain);
         printf("%s\n", path);
         std::cout << "从该节点开始的子树结构如下：" << std::endl;
         printSubtreeReversed(node, path, strlen(path));
@@ -38,5 +39,4 @@ void findVagueNode(Node* root, const char* reversedDomain)
     else {
         std::cout << "未找到该部分域名对应的节点。" << std::endl;
     }
-
 }
