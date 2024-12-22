@@ -1,27 +1,19 @@
 #include "deleteDomain.h"
 
-void deleteSubtree(Node* node) {
-    if (node == nullptr) {
-        return;
-    }
-    deleteSubtree(node->firstChild);
-    deleteSubtree(node->nextSibling);
-    delete node;
-}
 void deleteNodeAndSubtree(Node* root, Node* target) {
     if (root == nullptr) {
         return;
     }
     if (root == target) {
         // 释放目标节点及其子树
-        deleteSubtree(target);
+        root = nullptr;
         return;
     }
     if (root->firstChild == target) {
-        root->firstChild = nullptr;
+        root->firstChild = target->nextSibling;
     }
     else if (root->nextSibling == target) {
-        root->nextSibling = nullptr;
+        root->nextSibling = target->nextSibling;
     }
     deleteNodeAndSubtree(root->firstChild, target);
     deleteNodeAndSubtree(root->nextSibling, target);
