@@ -1,2 +1,5 @@
-﻿  deleteDomain.cpp
+﻿  createTree.cpp
+  userdomainGet.cpp
+C:\Users\26041\Desktop\domin\domain\domain\userdomainGet.cpp(39,21): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码...
   domain.vcxproj -> C:\Users\26041\Desktop\domin\domain\x64\Debug\domain.exe

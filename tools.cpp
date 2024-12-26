@@ -110,3 +110,36 @@ Node* findNodeAtDepth(Node* node, const char* name, int targetDepth) {
     return findNodeAtDepth(node->nextSibling, name, targetDepth);
 }
 
+void printFullDomainPath(Node* node) {
+    if (!node) return;
+
+    char path[1024] = { 0 }; // 用于存储域名路径
+    size_t pathLen = 0;
+    Node* current = node;
+
+    // 从下往上拼接域名
+    while (current) {
+        size_t nameLen = strlen(current->name);
+
+        // 检查是否超出路径缓冲区
+        if (pathLen + nameLen + 1 > sizeof(path)) {
+            std::cerr << "域名路径过长，无法存储！" << std::endl;
+            return;
+        }
+
+        // 拼接当前域名部分
+        memmove(path + nameLen + 1, path, pathLen + 1); // 向后移动现有路径
+        memcpy(path, current->name, nameLen);
+        path[nameLen] = (pathLen > 0) ? '.' : '\0'; // 添加分隔符或结束符
+        pathLen += nameLen + 1;
+
+        current = current->parent;
+    }
+
+    // 使用 reverseDomainParts 反转域名
+    char* reversedPath = reverseDomainParts(path);
+    std::cout << "完整域名路径: " << reversedPath << std::endl;
+
+    delete[] reversedPath; // 释放动态分配的内存
+}
+

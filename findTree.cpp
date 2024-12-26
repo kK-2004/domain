@@ -28,7 +28,6 @@ Node* findExactNode(Node* node, const char* domain)
 void findVagueNode(Node* root, const char* domain)
 {
     char* reversedDomain = reverseDomainParts(domain);
-
     Node* node = findExactNode(root, reversedDomain);
     if (node) {
         char* path = removeSubdomain(node->name, domain);
