@@ -58,9 +58,6 @@ void createHelper(Node* node, const char* domain, int depth)
         std::cout << "请输入用户ID: ";
         char temid[100];
         std::cin >> temid;
-
-        // 为 ID 分配内存并拷贝字符串
-        newNode->id = new char[strlen(temid) + 1];
         strcpy(newNode->id, temid);
     }
     if (depth == 1) {

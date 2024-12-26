@@ -20,7 +20,7 @@ int main() {
         std::cout << "7. 分类查询" << std::endl;
         std::cout << "8. 查询用户所有域名" << std::endl;
         std::cout << "9. 退出" << std::endl;
-        std::cout << "请输入操作选项 (1/2/3/4/5/6): ";
+        std::cout << "请输入操作选项 (1/2/3/4/5/6/7/8/9): ";
 
         int choice;
         std::cin >> choice;
@@ -124,9 +124,11 @@ int main() {
             std::cout << "请输入用户" << std::endl;
             std::cin >> user;
             std::cin.ignore();
-            char* reverseDomainParts(const char* path);
             printSubtreeUser(root, path, 0, user, validPaths, validPathCount);
-            printValidPaths(validPaths, validPathCount);  // 打印所有满足条件的路径
+            //printValidPaths(validPaths, validPathCount);  // 打印所有满足条件的路径
+            for (int i = 0; i < validPathCount; i++) {
+                std::cout << validPaths[i] << std::endl;
+            }
         }
         else if (choice == 9) {
             // 退出

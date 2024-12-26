@@ -23,8 +23,7 @@ void deleteDomain(Node* root, const char* domain)
     char* reversedDomain = reverseDomainParts(domain);
     Node* node = findExactNode(root, reversedDomain);
     if (node) {
-        char* deletepath = removeSubdomain(node->name, domain);
-        Node* deletenode = findExactNode(root, reverseDomainParts(deletepath));
+        // 删除目标节点及其子树
         deleteNodeAndSubtree(root, node);
         std::cout << "删除成功" << std::endl;
     }
@@ -32,3 +31,4 @@ void deleteDomain(Node* root, const char* domain)
         std::cout << "未找到该部分域名对应的节点。" << std::endl;
     }
 }
+
